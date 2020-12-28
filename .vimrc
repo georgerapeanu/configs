@@ -1,5 +1,4 @@
 set autoindent
-set cindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -37,6 +36,11 @@ function RunBash()
     :!./%
 endfunction
 
+function RunGo()
+    :w
+    :!go run %
+endfunction
+
 let mapleader = " "
 
 map<leader>c :call Comp()<Return>
@@ -46,3 +50,5 @@ map<leader>o :call Output()<Return>
 map<leader>k :call Okput()<Return>
 map<leader>d :call Debug()<Return>
 map<leader>b :call RunBash()<Return>
+map<leader>g :call RunGo()<Return>
+
